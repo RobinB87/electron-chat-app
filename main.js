@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Notification } = require("electron");
+const { app, BrowserWindow } = require("electron");
 
 function createWindow() {
   const window = new BrowserWindow({
@@ -14,11 +14,7 @@ function createWindow() {
   window.webContents.openDevTools();
 }
 
-app.whenReady().then(() => {
-  createWindow();
-  const notification = new Notification({ title: "Hello World", body: "My test message" });
-  notification.show();
-});
+app.whenReady().then(createWindow);
 
 app.on("window-all-closed", () => {
   // darwin is mac
