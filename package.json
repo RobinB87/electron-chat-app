@@ -1,0 +1,22 @@
+{
+  "name": "electron-chat-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobinB87/electron-chat-app.git"
+  },
+  "author": "RobinB87",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobinB87/electron-chat-app/issues"
+  },
+  "homepage": "https://github.com/RobinB87/electron-chat-app#readme",
+  "devDependencies": {
+    "electron": "^13.1.7"
+  }
+}
