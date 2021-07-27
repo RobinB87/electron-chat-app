@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain, Notification } = require("electron");
 const path = require("path");
 const isDev = !app.isPackaged;
 
@@ -8,7 +8,10 @@ function createWindow() {
     height: 800,
     backgroundColor: "white",
     webPreferences: {
-      nodeIntegration: true,
+      nodeIntegration: false,
+      worldSafeExecuteJavaScript: true,
+      contextIsolation: true,
+      preload: path.join(__dirname, 'preload.js')
     },
   });
 
@@ -23,6 +26,13 @@ if (isDev) {
 }
 
 app.whenReady().then(createWindow);
+
+ipcMain.on('notify', (_, message) => {
+  new Notification({
+    title: 'Note',
+    body: message
+  }).show();
+});
 
 app.on("window-all-closed", () => {
   // darwin is mac
