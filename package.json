@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/RobinB87/electron-chat-app#readme",
   "devDependencies": {
-    "electron": "^13.1.7"
+    "electron": "^13.1.7",
+    "electron-reload": "^2.0.0-alpha.1"
   },
   "dependencies": {
     "@babel/core": "^7.14.8",

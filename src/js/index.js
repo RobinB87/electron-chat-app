@@ -1,4 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import App from "./App";
 
-ReactDOM.render(<h1>I am React app!</h1>, document.getElementById("electron-chat"));
+ReactDOM.render(<App />, document.getElementById("electron-chat"));
